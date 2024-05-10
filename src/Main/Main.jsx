@@ -6,7 +6,10 @@ const Main = () => {
   return (
     <div>
       <Header />
-      <Outlet />
+      {/* min-h-[calc(100vh-306px)] */}
+      <div className=" max-w-7xl mx-auto">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

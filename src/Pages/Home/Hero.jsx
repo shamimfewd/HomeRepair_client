@@ -28,10 +28,10 @@ const Hero = () => {
       >
         <SwiperSlide>
           <div
-            className="bg-cover lg:p-52 md:p-24 p-4   w-full bg-repeat bg-center bg-gradient-to-r from-sky-600 to-indigo-600"
+            className="bg-cover lg:p-52 md:p-24 p-4 object-cover  w-full bg-no-repeat bg-center bg-gradient-to-r from-sky-600 to-indigo-600"
             style={{
               backgroundImage:
-                "url('https://media.gettyimages.com/id/1308375457/photo/cleaning-air-conditioner.jpg?s=612x612&w=gi&k=20&c=8C65cIF1LH9y89J0ktpbbWhPNtmJTusuY9WZvVZNs3Q=')",
+                "url('https://st.depositphotos.com/1010613/2860/i/450/depositphotos_28608021-stock-photo-young-plumber-fixing-a-sink.jpg')",
             }}
           >
             <div className="flex justify-center items-center h-full">
@@ -50,10 +50,10 @@ const Hero = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="bg-cover lg:p-52 md:p-24 p-4  w-full bg-repeat bg-center bg-gradient-to-r from-sky-500 to-indigo-500"
+            className="bg-cover lg:p-52 md:p-24 p-4 object-cover w-full bg-no-repeat bg-center bg-gradient-to-r from-sky-500 to-indigo-500"
             style={{
               backgroundImage:
-                "url('https://images.pexels.com/photos/1105754/pexels-photo-1105754.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+                "url('https://st4.depositphotos.com/20363444/29000/i/450/depositphotos_290002052-stock-photo-selective-focus-handsome-handyman-repairing.jpg')",
             }}
           >
             <div className="flex justify-center items-center h-full">
@@ -73,10 +73,10 @@ const Hero = () => {
 
         <SwiperSlide>
           <div
-            className="bg-cover lg:p-52 md:p-24 p-4  w-full bg-repeat bg-center bg-gradient-to-r from-cyan-500 to-blue-500"
+            className="bg-cover lg:p-52 md:p-24 p-4 object-cover  w-full bg-no-repeat bg-center bg-gradient-to-r from-cyan-500 to-blue-500"
             style={{
               backgroundImage:
-                "url('https://images.pexels.com/photos/5502227/pexels-photo-5502227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+                "url('https://t4.ftcdn.net/jpg/03/62/37/01/360_F_362370127_S1e6Da4AcOSVTMCOSb3UnI2bZKZkXm8q.jpg')",
             }}
           >
             <div className="flex justify-center items-center h-full">

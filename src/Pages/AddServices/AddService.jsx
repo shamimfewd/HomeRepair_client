@@ -1,11 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
-import axios from "axios";
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
-  console.log(user);
+
+  const navigate = useNavigate();
   const handleAddService = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -28,7 +29,6 @@ const AddService = () => {
       providerPhoto,
     };
 
-    console.log(newService);
     fetch("http://localhost:5000/service", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -38,6 +38,7 @@ const AddService = () => {
       .then((data) => {
         if (data.insertedId) {
           toast.success("Added Item Successfully");
+          navigate("/");
         }
       });
   };
