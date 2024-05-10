@@ -68,12 +68,16 @@ const Header = () => {
             </li>
           </ul>
         </div>
-        <Link className="text-xl">Logo</Link>
+        <img className="w-10 h-10" src="/logo11.png" alt="" />
+        <Link className="text-2xl">RepairRovers</Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
             <NavLink to={'/'}>Home</NavLink>
+          </li>
+          <li>
+            <NavLink to={'/services'}>Services</NavLink>
           </li>
           <li>
             <NavLink to={"/register"}>Register</NavLink>

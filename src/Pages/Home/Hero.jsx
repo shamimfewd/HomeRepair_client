@@ -31,7 +31,7 @@ const Hero = () => {
             className="bg-cover lg:p-52 md:p-24 p-4   w-full bg-repeat bg-center bg-gradient-to-r from-sky-600 to-indigo-600"
             style={{
               backgroundImage:
-                "url('https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')",
+                "url('https://media.gettyimages.com/id/1308375457/photo/cleaning-air-conditioner.jpg?s=612x612&w=gi&k=20&c=8C65cIF1LH9y89J0ktpbbWhPNtmJTusuY9WZvVZNs3Q=')",
             }}
           >
             <div className="flex justify-center items-center h-full">
