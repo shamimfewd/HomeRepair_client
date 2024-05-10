@@ -48,7 +48,7 @@ const Header = () => {
                   <summary>Dashboard</summary>
                   <ul className="">
                     <li className="mb-1">
-                      <NavLink> Add Service </NavLink>
+                      <NavLink to={'/addService'}> Add Service </NavLink>
                     </li>
                     <li className="mb-1">
                       <NavLink> Manage Service </NavLink>
@@ -89,7 +89,7 @@ const Header = () => {
                 <summary>Dashboard</summary>
                 <ul className="">
                   <li className="mb-1">
-                    <NavLink> Add Service </NavLink>
+                    <NavLink to={'/addService'}> Add Service </NavLink>
                   </li>
                   <li className="mb-1">
                     <NavLink> Manage Service </NavLink>
