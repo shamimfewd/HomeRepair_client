@@ -7,6 +7,7 @@ const AddService = () => {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
+  
   const handleAddService = (e) => {
     e.preventDefault();
     const form = e.target;
