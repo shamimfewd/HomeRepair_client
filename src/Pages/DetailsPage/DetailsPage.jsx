@@ -1,4 +1,5 @@
-import { useState } from "react";
+
+import { Helmet } from "react-helmet";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
@@ -23,6 +24,9 @@ const DetailsPage = () => {
   } = currentItem;
   return (
     <div>
+        <Helmet>
+          <title>RepairRovers - Service Details</title>
+        </Helmet>
       <div className="card lg:card-side bg-base-100 shadow-xl h-[30rem]">
         <figure>
           <img

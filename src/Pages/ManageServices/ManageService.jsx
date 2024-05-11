@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const ManageService = () => {
   const { user } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const ManageService = () => {
 
   return (
     <div>
+        <Helmet>
+          <title>RepairRovers - Manage Service</title>
+        </Helmet>
       <div className="grid grid-cols-2 gap-4">
         {services.map((service) => (
           <div key={service._id}>

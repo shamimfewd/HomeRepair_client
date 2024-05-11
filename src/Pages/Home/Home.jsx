@@ -1,12 +1,15 @@
-import { useLoaderData } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Hero from "./Hero";
-import { useState } from "react";
+
 import PopularService from "./PopularService";
 
 const Home = () => {
 
   return (
     <div>
+        <Helmet>
+          <title>RepairRovers - Home</title>
+        </Helmet>
       <Hero />
       <PopularService />
     </div>

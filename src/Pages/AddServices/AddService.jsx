@@ -2,12 +2,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
 
   const navigate = useNavigate();
-  
+
   const handleAddService = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -45,6 +46,9 @@ const AddService = () => {
   };
   return (
     <div className="flex justify-center items-center">
+        <Helmet>
+          <title>RepairRovers - Add Service</title>
+        </Helmet>
       <form onSubmit={handleAddService}>
         <label htmlFor="">Photo URL</label>
         <br />

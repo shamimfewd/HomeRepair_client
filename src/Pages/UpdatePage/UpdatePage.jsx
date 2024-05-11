@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const UpdatePage = () => {
   const { user } = useContext(AuthContext);
@@ -49,6 +50,9 @@ const UpdatePage = () => {
 
   return (
     <div>
+          <Helmet>
+          <title>RepairRovers - Update Service</title>
+        </Helmet>
       <h1>update page</h1>
       <div className="flex justify-center items-center">
         <form onSubmit={handleUpdateService}>

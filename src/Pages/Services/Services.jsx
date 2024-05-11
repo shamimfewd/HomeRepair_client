@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
 const Services = () => {
@@ -18,6 +19,9 @@ const Services = () => {
   }, []);
   return (
     <div>
+        <Helmet>
+          <title>RepairRovers - Services</title>
+        </Helmet>
       <div>
         <h2 className="text-3xl my-20 text-center">All Services</h2>
       </div>
