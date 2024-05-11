@@ -4,24 +4,12 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const UpdatePage = () => {
-  const loadedData = useLoaderData();
-  console.log(loadedData);
-
   const { user } = useContext(AuthContext);
+  const loadedData = useLoaderData();
+  const { _id, photo, serviceArea, serviceName, price, description } =
+    loadedData;
 
-  const {
-    _id,
-    photo,
-    serviceArea,
-    serviceName,
-    price,
-    description,
-    providerName,
-    providerEmail,
-    providerPhoto,
-  } = loadedData;
-
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
   const handleUpdateService = (e) => {
     e.preventDefault();
@@ -45,7 +33,7 @@ const UpdatePage = () => {
       providerPhoto,
     };
 
-    fetch(`http://localhost:5000/item/${_id}`, {
+    fetch(`http://localhost:5000/updateItem/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedService),
@@ -53,23 +41,24 @@ const UpdatePage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.modifiedCount > 0) {
-          toast.success("Added Item Successfully");
-          navigate("/");
+          toast.success("Updated Service Successfully");
+            navigate("/manageService");
         }
       });
   };
 
   return (
     <div>
+      <h1>update page</h1>
       <div className="flex justify-center items-center">
         <form onSubmit={handleUpdateService}>
           <label htmlFor="">Photo URL</label>
           <br />
           <input
             type="text"
+            defaultValue={photo}
             placeholder="photo url"
             name="photo"
-            defaultValue={photo}
             className="input input-bordered w-full max-w-xs"
           />
           <br />
@@ -151,7 +140,7 @@ const UpdatePage = () => {
           />
           <br />
           <br />
-          <input className="btn" type="submit" value="Add Service" />
+          <input className="btn" type="submit" value="Update Service" />
         </form>
       </div>
     </div>

@@ -66,7 +66,7 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/item/${params.id}`),
+          fetch(`http://localhost:5000/updateItem/${params.id}`),
       },
     ],
   },
