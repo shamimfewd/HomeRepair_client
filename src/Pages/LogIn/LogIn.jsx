@@ -1,19 +1,25 @@
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { FaGithub } from "react-icons/fa";
-import { useContext, useState } from "react";
+
+import { useContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const LogIn = () => {
-  const { logInUser, GoogleLogIn, githubLogIn } = useContext(AuthContext);
+  const { logInUser, GoogleLogIn, user, loading } = useContext(AuthContext);
 
   const [showPas, setShowPas] = useState(true);
   const navigate = useNavigate();
   const location = useLocation();
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [navigate, user]);
 
   const handleClick = () => {
     setShowPas(!showPas);
@@ -50,6 +56,8 @@ const LogIn = () => {
         console.log(error);
       });
   };
+
+  if (user || loading) return;
   return (
     <div>
       <div className="flex justify-center items-center ">

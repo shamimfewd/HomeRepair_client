@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -10,10 +10,16 @@ import { FaRegEye } from "react-icons/fa6";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
-  const { createUser, updateUser, user, setUser } = useContext(AuthContext);
+  const { createUser, updateUser, user, setUser,loading } = useContext(AuthContext);
   const navigate = useNavigate();
   const [registerError, setRegisterError] = useState("");
   const [showPas, setShowPas] = useState(true);
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [navigate, user]);
 
   const handleClick = () => {
     setShowPas(!showPas);
@@ -57,7 +63,7 @@ const Register = () => {
         console.log(error);
       });
   };
-
+  if (user || loading) return;
   return (
     <div>
       <div
