@@ -5,14 +5,11 @@ import { AuthContext } from "../Providers/AuthProvider";
 const Header = () => {
   const { user, logOut } = useContext(AuthContext);
 
-
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
   );
 
-
-
-  // dark and light mode 
+  // dark and light mode
   const handleChangeTheme = (e) => {
     if (e.target.checked) {
       setTheme("dark");
@@ -26,8 +23,6 @@ const Header = () => {
     const localTheme = localStorage.getItem("theme");
     document.querySelector("html").setAttribute("data-theme", localTheme);
   }, [theme]);
-
-
 
   // log out
   const handleLogOut = () => {
@@ -120,7 +115,7 @@ const Header = () => {
                     <NavLink to={"/manageService"}> Manage Service </NavLink>
                   </li>
                   <li className="mb-1">
-                    <NavLink> Booked-Services </NavLink>
+                    <NavLink to={"/bookedServices"}> Booked-Services </NavLink>
                   </li>
                   <li>
                     <NavLink> Service-To-Do </NavLink>

@@ -10,6 +10,8 @@ import DetailsPage from "../Pages/DetailsPage/DetailsPage";
 import ManageService from "../Pages/ManageServices/ManageService";
 import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import BookingPage from "../Pages/BookingPage/BookingPage";
+import BookedServices from "../Pages/BookedServices/BookedServices";
 
 const router = createBrowserRouter([
   {
@@ -69,6 +71,23 @@ const router = createBrowserRouter([
 
         loader: ({ params }) =>
           fetch(`http://localhost:5000/updateItem/${params.id}`),
+      },
+      {
+        path: "/bookingPage/:id",
+        element: (
+          <PrivateRoute>
+            <BookingPage />
+          </PrivateRoute>
+        ),
+        loader: () => fetch("http://localhost:5000/service"),
+      },
+      {
+        path: "/bookedServices",
+        element: (
+          <PrivateRoute>
+            <BookedServices />
+          </PrivateRoute>
+        ),
       },
     ],
   },
