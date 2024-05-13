@@ -18,55 +18,57 @@ const Services = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="bg-[#F5F5F5]">
+      <div className="py-24">
         <Helmet>
           <title>RepairRovers - Services</title>
         </Helmet>
-      <div>
-        <h2 className="text-3xl my-20 text-center">All Services</h2>
-      </div>
-      <div className="grid grid-cols-1  gap-4">
-        {services.slice(0, visible).map((service) => (
-          <div key={service._id}>
-            <div className="card card-side bg-base-100 shadow-xl h-[15rem]">
-              <figure>
-                <img className="w-[13rem]" src={service.photo} alt="photo" />
-              </figure>
-              <div className="card-body">
-                <h2 className="card-title">{service.serviceName}</h2>
-                <p>{service.price}</p>
-                <p>{service.description.slice(0, 100)}...</p>
-                <hr />
-                <div className="">
-                  <div className="flex items-center">
-                    <img
-                      className="w-8 h-8 rounded-full"
-                      src={service.providerPhoto}
-                      alt=""
-                    />
-                    <p className="font-bold">{service.providerName}</p>
+        <div>
+          <h2 className="text-3xl pb-24 text-center">All Services</h2>
+        </div>
+        <div className="grid grid-cols-1  gap-4 max-w-7xl mx-auto">
+          {services.slice(0, visible).map((service) => (
+            <div key={service._id}>
+              <div className="card card-side bg-base-100 shadow-xl h-[15rem]">
+                <figure>
+                  <img className="w-[13rem]" src={service.photo} alt="photo" />
+                </figure>
+                <div className="card-body">
+                  <h2 className="card-title">{service.serviceName}</h2>
+                  <p>Price: {service.price}</p>
+                  <p>Location: {service.serviceArea}</p>
+                  <p>{service.description.slice(0, 100)}...</p>
+                  <hr />
+                  <div className="">
+                    <div className="flex items-center">
+                      <img
+                        className="w-8 h-8 rounded-full"
+                        src={service.providerPhoto}
+                        alt=""
+                      />
+                      <p className="font-bold">{service.providerName}</p>
 
-                    <Link to={`/details/${service._id}`}>
-                      <button className="btn btn-primary">View Details</button>
-                    </Link>
+                      <Link to={`/details/${service._id}`}>
+                        <button className="btn ">View Details</button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        ))}
-      </div>
-      <div className="text-center">
-        {services.length > visible ? (
-          <>
-            {" "}
-            <button className="btn mt-10" onClick={handleShowMore}>
-              Load More
-            </button>
-          </>
-        ) : (
-          ""
-        )}
+          ))}
+        </div>
+        <div className="text-center">
+          {services.length > visible ? (
+            <>
+              <button className="btn mt-10" onClick={handleShowMore}>
+                Load More
+              </button>
+            </>
+          ) : (
+            ""
+          )}
+        </div>
       </div>
     </div>
   );

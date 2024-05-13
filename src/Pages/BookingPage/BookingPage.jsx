@@ -1,10 +1,11 @@
 import { useContext } from "react";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
-
+import { toast } from "react-toastify";
 const BookingPage = () => {
   const loadedData = useLoaderData();
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const { id } = useParams();
   const currentService = loadedData.find((serv) => serv._id === id);
@@ -13,8 +14,9 @@ const BookingPage = () => {
 
   const handlePurchase = (e) => {
     e.preventDefault();
+
     const form = e.target;
-    const serviceId = form.serviceId.value;
+    const serviceId = _id;
     const photo = form.photo.value;
     const serviceName = form.serviceName.value;
     const price = form.price.value;
@@ -26,7 +28,8 @@ const BookingPage = () => {
     const email = form.email.value;
     const name = form.name.value;
     const date = form.date.value;
-    const status = form.status.value;
+    const status = "pending";
+
     const bookedService = {
       serviceId,
       photo,
@@ -51,59 +54,119 @@ const BookingPage = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          alert("added");
+          toast.success("Purchase Successfully");
+          navigate("/bookedServices");
         }
       });
   };
 
   return (
-    <div>
-      <h1>booking page{loadedData.length}</h1>
-      <form onSubmit={handlePurchase}>
-        <input type="text" name="serviceId" disabled defaultValue={_id} />
-        <br />
-        <input
-          type="text"
-          name="serviceName"
-          disabled
-          defaultValue={serviceName}
-        />
-        <br />
-        <input type="text" name="price" disabled defaultValue={price} />
-        <br />
-        <input type="text" name="photo" disabled defaultValue={photo} />
-        <br />
-        <input
-          type="text"
-          name="providerEmail"
-          disabled
-          defaultValue={providerEmail}
-        />
-        <br />
-        <input
-          type="text"
-          name="providerName"
-          disabled
-          defaultValue={providerName}
-        />
-        <br />
-        <input
-          type="text"
-          name="name"
-          disabled
-          defaultValue={user.displayName}
-        />
+    <div className="">
+      <form
+        onSubmit={handlePurchase}
+        className=" p-6 w-1/2 mx-auto bg-[#FFFFFF] rounded-xl my-24"
+      >
+        <div className="grid grid-cols-2 gap-4 ">
+          {/* <input type="text" name="serviceId" disabled defaultValue={_id} /> */}
 
-        <br />
-        <input type="text" name="email" disabled defaultValue={user.email} />
+          <div>
+            <label htmlFor="">Service Name</label>
+            <br />
 
-        <br />
-        <input type="date" name="date" placeholder="date" />
+            <input
+              className="input w-full"
+              type="text"
+              name="serviceName"
+              disabled
+              defaultValue={serviceName}
+            />
+          </div>
 
+          <div>
+            <label htmlFor="">Service Price</label>
+            <br />
+            <input
+              type="text"
+              className="input w-full"
+              name="price"
+              disabled
+              defaultValue={price}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="">Service Photo</label>
+            <br />
+            <input
+              type="text"
+              className="input w-full"
+              name="photo"
+              disabled
+              defaultValue={photo}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Provider Email</label>
+            <br />
+            <input
+              type="text"
+              name="providerEmail"
+              className="input w-full"
+              disabled
+              defaultValue={providerEmail}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Provider Name</label>
+            <br />
+            <input
+              type="text"
+              name="providerName"
+              className="input w-full"
+              disabled
+              defaultValue={providerName}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Seller Name</label>
+            <br />
+
+            <input
+              type="text"
+              name="name"
+              className="input w-full"
+              disabled
+              defaultValue={user.displayName}
+            />
+          </div>
+          <div>
+            <label htmlFor="">Seller Email</label>
+            <br />
+            <input
+              type="text"
+              className="input w-full"
+              name="email"
+              disabled
+              defaultValue={user.email}
+            />
+          </div>
+
+          <div>
+            <label htmlFor="" className="">
+              Date
+            </label>
+            <br />
+
+            <input
+              type="date"
+              className="input w-full"
+              name="date"
+              placeholder="date"
+            />
+          </div>
+        </div>
         <br />
-        <input type="text" name="status" placeholder="status" />
-        <br />
-        <input className="btn" type="submit" value="Purchase" />
+        <input className="btn w-full" type="submit" value="Purchase" />
       </form>
     </div>
   );
