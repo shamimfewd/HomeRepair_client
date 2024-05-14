@@ -2,7 +2,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 const Footer = () => {
   return (
-    <footer className="bg-white mt-24 dark:bg-gray-900">
+    <footer className="bg-gray-400 mt-24 dark:bg-gray-900">
              <ScrollToTop smooth />
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">

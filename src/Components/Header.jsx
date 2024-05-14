@@ -107,7 +107,7 @@ const Header = () => {
             <li className="z-10">
               <details>
                 <summary>Dashboard</summary>
-                <ul className="">
+                <ul className="w-[10rem]">
                   <li className="mb-1">
                     <NavLink to={"/addService"}> Add Service </NavLink>
                   </li>
@@ -118,7 +118,7 @@ const Header = () => {
                     <NavLink to={"/bookedServices"}> Booked-Services </NavLink>
                   </li>
                   <li>
-                    <NavLink> Service-To-Do </NavLink>
+                    <NavLink to={"/serviceToDo"}> Service-To-Do </NavLink>
                   </li>
                 </ul>
               </details>

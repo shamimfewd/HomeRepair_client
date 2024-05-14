@@ -28,7 +28,7 @@ const BookingPage = () => {
     const email = form.email.value;
     const name = form.name.value;
     const date = form.date.value;
-    const status = "pending";
+    const status = "Pending";
 
     const bookedService = {
       serviceId,

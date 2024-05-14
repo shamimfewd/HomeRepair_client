@@ -12,6 +12,7 @@ import UpdatePage from "../Pages/UpdatePage/UpdatePage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import BookingPage from "../Pages/BookingPage/BookingPage";
 import BookedServices from "../Pages/BookedServices/BookedServices";
+import ServiceTodo from "../Pages/ServiceToDo/ServiceTodo";
 
 const router = createBrowserRouter([
   {
@@ -86,6 +87,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <BookedServices />
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/serviceToDo",
+        element: (
+          <PrivateRoute>
+            <ServiceTodo />
           </PrivateRoute>
         ),
       },
