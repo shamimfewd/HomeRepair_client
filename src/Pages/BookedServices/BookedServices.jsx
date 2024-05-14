@@ -12,13 +12,15 @@ const BookedServices = () => {
       });
   }, [user]);
 
-  console.log(bookedServ);
-
-  
   return (
     <div className="max-w-7xl mx-auto bg-[#F5F5F5] mb-24">
-      <h3 className="text-xl">my bids{bookedServ.length}</h3>
-      <div className="overflow-x-auto bg-[#FFFFFF] my-24 rounded-xl ">
+   
+      <div className="overflow-x-auto bg-[#FFFFFF] my-24 rounded-xl p-6">
+        <div className="mb-4">
+          <h2 className="text-3xl font-bold text-[#000000d6]">
+            My Booked Service: {bookedServ.length}
+          </h2>
+        </div>
         <table className="table">
           {/* head */}
           <thead>
@@ -27,7 +29,7 @@ const BookedServices = () => {
               <th>Service Name</th>
               <th>Price</th>
               <th>Status</th>
-              <th>Action</th>
+              {/* <th>Action</th> */}
             </tr>
           </thead>
           <tbody className="my-24">
@@ -42,27 +44,19 @@ const BookedServices = () => {
                   />
                 </td>
                 <td>{serv.serviceName}</td>
-                <td>Quality Control Specialist</td>
-                <td
-                  className={`${
-                    serv.status === "Pending" && "text-yellow-100"
-                  }`}
-                >
+                <td>${serv.price}</td>
+                <td>
                   <span
                     className={`rounded-md p-1 text-sm  ${
                       serv.status === "Pending" && "bg-yellow-300"
-                    } ${
-                      serv.status === "Working" && "bg-green-300"
-                    } ${
+                    } ${serv.status === "Working" && "bg-green-300"} ${
                       serv.status === "Completed" && "bg-blue-300"
                     }`}
                   >
                     {serv.status}
                   </span>
                 </td>
-                <td>
-
-                </td>
+                <td></td>
               </tr>
             ))}
           </tbody>

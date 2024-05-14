@@ -45,7 +45,7 @@ const BookingPage = () => {
       date,
       status,
     };
-    console.log(bookedService);
+
     fetch("http://localhost:5000/bookingData", {
       method: "POST",
       headers: { "content-type": "application/json" },
@@ -64,9 +64,15 @@ const BookingPage = () => {
     <div className="">
       <form
         onSubmit={handlePurchase}
-        className=" p-6 w-1/2 mx-auto bg-[#FFFFFF] rounded-xl my-24"
+        className="p-4 md:p-6 lg:p-6  md:w-1/2 lg:w-1/2 mx-auto bg-[#FFFFFF] rounded-xl my-24"
       >
-        <div className="grid grid-cols-2 gap-4 ">
+        <div className="mb-4">
+          <h2 className="text-3xl font-bold text-[#000000d6]">
+          Purchase Service
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 ">
           {/* <input type="text" name="serviceId" disabled defaultValue={_id} /> */}
 
           <div>
@@ -166,7 +172,11 @@ const BookingPage = () => {
           </div>
         </div>
         <br />
-        <input className="btn w-full" type="submit" value="Purchase" />
+        <input
+          className="btn mt-4 bg-[#000000db] w-full text-white"
+          type="submit"
+          value="Purchase"
+        />
       </form>
     </div>
   );

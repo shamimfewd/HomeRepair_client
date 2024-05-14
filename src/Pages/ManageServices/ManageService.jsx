@@ -49,11 +49,15 @@ const ManageService = () => {
   }, [user]);
 
   return (
-    <div>
-        <Helmet>
-          <title>RepairRovers - Manage Service</title>
-        </Helmet>
-      <div className="grid grid-cols-2 gap-4">
+    <div className="max-w-7xl mx-auto">
+      <Helmet>
+        <title>RepairRovers - Manage Service</title>
+      </Helmet>
+
+      <div className="mb-4 mx-auto text-center my-24">
+          <h2 className="text-3xl font-bold mb-20 text-[#000000d6]">Add Service</h2>
+        </div>
+      <div className="grid grid-cols-2 gap-4 ">
         {services.map((service) => (
           <div key={service._id}>
             <div className="card  card-side bg-base-100 shadow-xl h-[15rem]">
@@ -66,7 +70,7 @@ const ManageService = () => {
                 <p>{service.description.slice(0, 100)}...</p>
                 <hr />
                 <div className="">
-                  <div className="flex items-center">
+                  <div className="flex items-center space-x-2">
                     <img
                       className="w-8 h-8 rounded-full"
                       src={service.providerPhoto}

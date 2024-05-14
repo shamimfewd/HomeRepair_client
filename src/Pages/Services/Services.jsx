@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
@@ -5,11 +6,35 @@ import { Link } from "react-router-dom";
 const Services = () => {
   const [services, setServices] = useState([]);
   const [visible, setVisible] = useState(6);
+  // const [search, setSearch] = useState("");
+  // const [searchText, setSearchText] = useState("");
+  // const [job, setJob] = useState("");
+  // const [filter, setFilter] = useState("");
 
   const handleShowMore = () => {
     setVisible((preValue) => preValue + 2);
   };
 
+  // const handleSearch = (e) => {
+  //   e.preventDefault();
+
+  //   setSearch(searchText);
+  // };
+
+  // // filter data from db
+  // useEffect(() => {
+  //   const getData = async () => {
+  //     const { data } = await axios(
+  //       `http://localhost:5000/allData?search=${search}`
+  //     );
+  //     setServices(data);
+  //     console.log(data);
+  //   };
+
+  //   getData();
+  // }, [search]);
+
+  // // get all data from db
   useEffect(() => {
     fetch("http://localhost:5000/service")
       .then((res) => res.json())
@@ -23,8 +48,24 @@ const Services = () => {
         <Helmet>
           <title>RepairRovers - Services</title>
         </Helmet>
+        <div className="mb-4">
+          <h2 className="text-3xl font-bold text-[#000000d6]">
+           All Services
+          </h2>
+        </div>
+
         <div>
-          <h2 className="text-3xl pb-24 text-center">All Services</h2>
+          {/* <form onSubmit={handleSearch}>
+            <input
+              type="text"
+              name="searchValue"
+              className="grow input"
+              onChange={(e) => setSearchText(e.target.value)}
+              value={searchText}
+              placeholder="Search"
+            />
+            <input className="btn" type="submit" value="Search" />
+          </form> */}
         </div>
         <div className="grid grid-cols-1  gap-4 max-w-7xl mx-auto">
           {services.slice(0, visible).map((service) => (

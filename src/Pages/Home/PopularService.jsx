@@ -107,6 +107,7 @@ const PopularService = () => {
           ) : (
             ""
           )}
+          <Link to={'/services'} className="btn">Visit All</Link>
         </div>
       </div>
     </div>
