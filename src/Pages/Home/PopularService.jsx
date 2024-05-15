@@ -98,7 +98,7 @@ const PopularService = () => {
             </div>
           ))}
         </div>
-        <div className="text-center">
+        <div className="text-center  mt-6">
           {services.length > visible ? (
             <>
               <button className="btn mt-10 bg-[#3ACF87] text-white" onClick={handleShowMore}>
