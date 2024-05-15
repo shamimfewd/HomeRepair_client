@@ -31,7 +31,7 @@ const AddService = () => {
       providerPhoto,
     };
 
-    fetch("http://localhost:5000/service", {
+    fetch("https://b9-assignment-11-server.vercel.app/service", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(newService),

@@ -1,11 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
+import { Helmet } from "react-helmet";
 
 const BookedServices = () => {
   const [bookedServ, setBookedServ] = useState([]);
   const { user } = useContext(AuthContext);
   useEffect(() => {
-    fetch(`http://localhost:5000/bookingData/${user?.email}`)
+    fetch(`https://b9-assignment-11-server.vercel.app/bookingData/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setBookedServ(data);
@@ -14,7 +15,9 @@ const BookedServices = () => {
 
   return (
     <div className="max-w-7xl mx-auto bg-[#F5F5F5] mb-24">
-   
+    <Helmet>
+        <title>RepairRovers - Booked Service</title>
+      </Helmet>
       <div className="overflow-x-auto bg-[#FFFFFF] my-24 rounded-xl p-6">
         <div className="mb-4">
           <h2 className="text-3xl font-bold text-[#000000d6]">

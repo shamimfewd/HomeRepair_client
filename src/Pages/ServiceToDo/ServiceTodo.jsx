@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 
 const ServiceTodo = () => {
   const [todoData, setTodoData] = useState([]);
@@ -13,7 +14,7 @@ const ServiceTodo = () => {
 
   const getData = async () => {
     const { data } = await axios(
-      `http://localhost:5000/serviceToDoData/${user?.email}`
+      `https://b9-assignment-11-server.vercel.app/serviceToDoData/${user?.email}`
     );
     setTodoData(data);
   };
@@ -24,7 +25,7 @@ const ServiceTodo = () => {
     if (prevStatus === status)
       return toast.warning("Sorry, Status Already Exist");
     const { data } = await axios.patch(
-      `http://localhost:5000/updateSta/${id}`,
+      `https://b9-assignment-11-server.vercel.app/updateSta/${id}`,
       { status }
     );
     console.log(data);
@@ -33,6 +34,9 @@ const ServiceTodo = () => {
   };
   return (
     <div className="max-w-7xl mx-auto bg-[#F5F5F5] mb-24">
+         <Helmet>
+        <title>RepairRovers - Service-To-Do</title>
+      </Helmet>
       <div className="overflow-x-auto bg-[#FFFFFF] my-24 rounded-xl p-6">
       <div className="mb-4">
           <h2 className="text-3xl font-bold text-[#000000d6]">

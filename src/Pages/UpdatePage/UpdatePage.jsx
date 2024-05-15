@@ -34,7 +34,7 @@ const UpdatePage = () => {
       providerPhoto,
     };
 
-    fetch(`http://localhost:5000/updateItem/${_id}`, {
+    fetch(`https://b9-assignment-11-server.vercel.app/updateItem/${_id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(updatedService),

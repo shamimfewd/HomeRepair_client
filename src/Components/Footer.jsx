@@ -1,9 +1,9 @@
 import ScrollToTop from "react-scroll-to-top";
-
+import logo from "../../src/assets/home_repire.png";
 const Footer = () => {
   return (
     <footer className="bg-gray-400 mt-24 dark:bg-gray-900">
-             <ScrollToTop smooth />
+      <ScrollToTop smooth />
       <div className="container px-6 py-12 mx-auto">
         <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 sm:gap-y-10 lg:grid-cols-4">
           <div className="sm:col-span-2">
@@ -83,7 +83,7 @@ const Footer = () => {
         <hr className="my-6 border-gray-200 md:my-8 dark:border-gray-700" />
 
         <div className="flex items-center justify-between">
-          
+          <img className="w-20 h-20" src={logo} alt="" />
         </div>
 
         <div className="flex -mx-2">

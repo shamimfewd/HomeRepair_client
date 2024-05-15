@@ -20,7 +20,7 @@ const ManageService = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/item/${_id}`, {
+        fetch(`https://b9-assignment-11-server.vercel.app/item/${_id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -41,7 +41,7 @@ const ManageService = () => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:5000/item/${user?.email}`)
+    fetch(`https://b9-assignment-11-server.vercel.app/item/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -55,7 +55,7 @@ const ManageService = () => {
       </Helmet>
 
       <div className="mb-4 mx-auto text-center my-24">
-          <h2 className="text-3xl font-bold mb-20 text-[#000000d6]">Add Service</h2>
+          <h2 className="text-3xl font-bold mb-20 text-[#000000d6]">Your Posted Service</h2>
         </div>
       <div className="grid grid-cols-2 gap-4 ">
         {services.map((service) => (

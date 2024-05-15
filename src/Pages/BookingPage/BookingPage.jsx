@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { toast } from "react-toastify";
+import { Helmet } from "react-helmet";
 const BookingPage = () => {
   const loadedData = useLoaderData();
   const { user } = useContext(AuthContext);
@@ -46,7 +47,7 @@ const BookingPage = () => {
       status,
     };
 
-    fetch("http://localhost:5000/bookingData", {
+    fetch("https://b9-assignment-11-server.vercel.app/bookingData", {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(bookedService),
@@ -62,6 +63,9 @@ const BookingPage = () => {
 
   return (
     <div className="">
+          <Helmet>
+        <title>RepairRovers - Service Booking</title>
+      </Helmet>
       <form
         onSubmit={handlePurchase}
         className="p-4 md:p-6 lg:p-6  md:w-1/2 lg:w-1/2 mx-auto bg-[#FFFFFF] rounded-xl my-24"

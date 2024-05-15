@@ -32,7 +32,7 @@ const Hero = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 px-16 bg-[#F2EBE1] h-[100vh]">
+          <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 px-16 bg-[#F2EBE1] h-[100vh]">
             <div className="text-left flex  items-center">
               <div className="">
                 <h1 className="text-6xl font-bold leading-tight">

@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link, useLoaderData, useParams } from "react-router-dom";
+import { Link, Navigate, useLoaderData, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
   const loadedData = useLoaderData();
@@ -25,27 +25,36 @@ const DetailsPage = () => {
       <Helmet>
         <title>RepairRovers - Service Details</title>
       </Helmet>
-      <div className="  max-w-7xl mx-auto">
-        <div className="card lg:card-side bg-base-100 shadow-xl h-[30rem]">
-          <figure>
-            <img className=" object-cover" src={photo} alt="image" />
+      <div className="max-w-7xl mx-auto">
+        <div className="card flex lg:card-side bg-base-100 shadow-xl h-[30rem]">
+          <figure className="flex-1">
+            <img
+              className="bg-cover p-4  object-cover"
+              src={photo}
+              alt="image"
+            />
           </figure>
-          <div className="card-body">
-            <h2 className="card-title">{serviceName}</h2>
-            <div>
+          <div className="card-body flex-1">
+            <div className="flex items-center gap-x-1 pt-6">
               <img
                 className="w-10 h-10 rounded-full"
                 src={providerPhoto}
                 alt=""
               />
-              <h3>{providerName}</h3>
-              <p>Location: {serviceArea}</p>
+              <div className="flex gap-x-1">
+                <h3>{providerName}</h3>
+                <p className="font-bold">Location: {serviceArea}</p>
+              </div>
             </div>
-
-            <p>Price: {price}</p>
+            <h2 className="card-title">{serviceName}</h2>
+            <p>Price: $ {price}</p>
             <hr />
-            <p>{description}</p>
+            <p>
+              <span className="font-bold">Read:</span>
+              {description}
+            </p>
             <div className="card-actions justify-end">
+              <Link to={"/"}>Go Back</Link>
               <Link to={`/bookingPage/${_id}`}>
                 <button className="btn btn-primary">Book Now</button>
               </Link>

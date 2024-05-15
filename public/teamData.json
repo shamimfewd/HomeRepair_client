@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Alice Johnson",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgXeFglRqvtKhAn03BGzRiF7ilCOn8vHGFuQ&s"
+  },
+  {
+    "name": "Bob Smith",
+    "image": "images/bob.jpg"
+  },
+  {
+    "name": "Carol White",
+    "image": "images/carol.jpg"
+  },
+  {
+    "name": "David Brown",
+    "image": "images/david.jpg"
+  },
+  {
+    "name": "Eve Davis",
+    "image": "images/eve.jpg"
+  },
+  {
+    "name": "Frank Miller",
+    "image": "images/frank.jpg"
+  },
+  {
+    "name": "Grace Wilson",
+    "image": "images/grace.jpg"
+  },
+  {
+    "name": "Henry Clark",
+    "image": "images/henry.jpg"
+  }
+]

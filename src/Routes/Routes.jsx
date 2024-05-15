@@ -23,7 +23,7 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
-        loader: () => fetch("http://localhost:5000/service"),
+        loader: () => fetch("https://b9-assignment-11-server.vercel.app/service"),
       },
       {
         path: "/register",
@@ -52,7 +52,7 @@ const router = createBrowserRouter([
             <DetailsPage />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/service"),
+        loader: () => fetch("https://b9-assignment-11-server.vercel.app/service"),
       },
       {
         path: "/manageService",
@@ -71,7 +71,7 @@ const router = createBrowserRouter([
         ),
 
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/updateItem/${params.id}`),
+          fetch(`https://b9-assignment-11-server.vercel.app/updateItem/${params.id}`),
       },
       {
         path: "/bookingPage/:id",
@@ -80,7 +80,7 @@ const router = createBrowserRouter([
             <BookingPage />
           </PrivateRoute>
         ),
-        loader: () => fetch("http://localhost:5000/service"),
+        loader: () => fetch("https://b9-assignment-11-server.vercel.app/service"),
       },
       {
         path: "/bookedServices",

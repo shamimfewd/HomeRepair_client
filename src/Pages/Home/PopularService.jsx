@@ -11,7 +11,7 @@ const PopularService = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/service")
+    fetch("https://b9-assignment-11-server.vercel.app/service")
       .then((res) => res.json())
       .then((data) => {
         setServices(data);
@@ -20,8 +20,10 @@ const PopularService = () => {
   return (
     <div className="bg-[#F5F5F5]">
       <div className="max-w-7xl mx-auto py-20">
-        <div>
-          <h2 className="text-3xl  text-center">Popular Services</h2>
+      <div className="mb-20 text-center">
+          <h2 className="text-3xl font-bold text-[#000000d6]">
+            Popular Services
+          </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4 ">
           {services.slice(0, visible).map((service) => (
@@ -99,7 +101,6 @@ const PopularService = () => {
         <div className="text-center">
           {services.length > visible ? (
             <>
-              {" "}
               <button className="btn mt-10" onClick={handleShowMore}>
                 Load More
               </button>
@@ -107,7 +108,9 @@ const PopularService = () => {
           ) : (
             ""
           )}
-          <Link to={'/services'} className="btn">Visit All</Link>
+          <Link to={"/services"} className="btn">
+            Visit All
+          </Link>
         </div>
       </div>
     </div>
