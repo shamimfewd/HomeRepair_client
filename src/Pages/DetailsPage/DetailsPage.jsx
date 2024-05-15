@@ -54,9 +54,9 @@ const DetailsPage = () => {
               {description}
             </p>
             <div className="card-actions justify-end">
-              <Link to={"/"}>Go Back</Link>
+              <Link to={"/"} className="btn bg-[#000d] mr-2  text-white">Go Back</Link>
               <Link to={`/bookingPage/${_id}`}>
-                <button className="btn btn-primary">Book Now</button>
+                <button className="btn bg-[#3ACF87] text-white ">Book Now</button>
               </Link>
             </div>
           </div>

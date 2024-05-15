@@ -190,14 +190,14 @@ const Header = () => {
 
               <button
                 onClick={handleLogOut}
-                className="btn lg:text-lg bg-[#fc1414d6] border-none text-white"
+                className="btn lg:text-lg bg-orange-400 border-none text-white"
               >
                 Log Out
               </button>
             </>
           ) : (
             <Link to={"/login"}>
-              <button className="btn lg:text-lg bg-[#01EEFF] border-none">
+              <button className="btn lg:text-lg bg-[#3ACF87] text-white border-none">
                 LogIn
               </button>
             </Link>

@@ -58,7 +58,7 @@ const Services = () => {
               placeholder="Search"
             />
             <input
-              className="btn bg-[#000000e8] text-white"
+              className="btn bg-[#3ACF87] text-white"
               type="submit"
               value="Search"
             />
@@ -78,7 +78,7 @@ const Services = () => {
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{service.serviceName}</h2>
-                    <p>Price: {service.price}</p>
+                    <p>Price: ${service.price}</p>
                     <p>Location: {service.serviceArea}</p>
                     <p>{service.description.slice(0, 100)}...</p>
                     <hr />
@@ -92,7 +92,7 @@ const Services = () => {
                         <p className="font-bold">{service.providerName}</p>
 
                         <Link to={`/details/${service._id}`}>
-                          <button className="btn ">View Details</button>
+                          <button className="btn bg-[#3ACF87] text-white">View Details</button>
                         </Link>
                       </div>
                     </div>
@@ -105,7 +105,7 @@ const Services = () => {
         <div className="text-center">
           {services.length > visible ? (
             <>
-              <button className="btn mt-10" onClick={handleShowMore}>
+              <button className="btn mt-10 bg-[#3ACF87] text-white" onClick={handleShowMore}>
                 Load More
               </button>
             </>

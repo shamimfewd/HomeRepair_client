@@ -25,20 +25,20 @@ const PopularService = () => {
             Popular Services
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4 ">
+        <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-2 gap-4 mx-2">
           {services.slice(0, visible).map((service) => (
             <div key={service._id}>
-              <div className="card lg:flex card-side bg-base-100 shadow-xl h-[15rem]">
-                <figure className="flex-1">
+              <div className="card lg:flex lg:card-side bg-base-100 shadow-xl md:h-[30rem] lg:h-[15rem]">
+                <figure className=" lg:flex-1">
                   <img
                     className="w-full h-full"
                     src={service.photo}
                     alt="photo"
                   />
                 </figure>
-                <div className="card-body flex-1">
+                <div className="card-body  lg:flex-1">
                   <h2 className="card-title">{service.serviceName}</h2>
-                  <p>Price: {service.price}</p>
+                  <p>Price: ${service.price}</p>
                   <p>{service.description.slice(0, 100)}...</p>
                   <hr />
                   <div className="">
@@ -52,12 +52,12 @@ const PopularService = () => {
 
                       <Link
                         to={`/details/${service._id}`}
-                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-indigo-600 transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
+                        className="relative inline-flex items-center justify-start py-3 pl-4 pr-12 overflow-hidden font-semibold text-[#3ACF87] transition-all duration-150 ease-in-out rounded hover:pl-10 hover:pr-6 bg-gray-50 group"
                       >
-                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-indigo-600 group-hover:h-full"></span>
+                        <span className="absolute bottom-0 left-0 w-full h-1 transition-all duration-150 ease-in-out bg-[#3ACF87] group-hover:h-full"></span>
                         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">
                           <svg
-                            className="w-5 h-5 text-green-400"
+                            className="w-5 h-5 text-[#3ACF87]"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ const PopularService = () => {
                         </span>
                         <span className="absolute left-0 pl-2.5 -translate-x-12 group-hover:translate-x-0 ease-out duration-200">
                           <svg
-                            className="w-5 h-5 text-green-400"
+                            className="w-5 h-5 text-white"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -101,14 +101,14 @@ const PopularService = () => {
         <div className="text-center">
           {services.length > visible ? (
             <>
-              <button className="btn mt-10" onClick={handleShowMore}>
+              <button className="btn mt-10 bg-[#3ACF87] text-white" onClick={handleShowMore}>
                 Load More
               </button>
             </>
           ) : (
             ""
           )}
-          <Link to={"/services"} className="btn">
+          <Link to={"/services"} className="btn ml-2 bg-[#3ACF87] text-white">
             Visit All
           </Link>
         </div>

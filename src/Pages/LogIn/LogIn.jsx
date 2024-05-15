@@ -112,7 +112,7 @@ const LogIn = () => {
 
             <input
               type="submit"
-              className="btn w-full  bg-[#00b38c] text-white text-2xl"
+              className="btn w-full  bg-[#3ACF87] text-white text-2xl"
               value="LogIn"
             />
           </form>
