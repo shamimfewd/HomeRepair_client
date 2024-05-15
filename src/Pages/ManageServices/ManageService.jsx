@@ -61,11 +61,11 @@ const ManageService = () => {
           </h2>
         </div>
         {services.length > 0 ? (
-          <div className="grid grid-cols-2 gap-4 ">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 ">
             {services.map((service) => (
               <div key={service._id}>
                 <div className="card  card-side bg-base-100 shadow-xl h-[15rem]">
-                  <figure>
+                  <figure className="ml-2">
                     <img
                       className="w-[13rem] ml-2"
                       src={service.photo}

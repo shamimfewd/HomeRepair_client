@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet";
-import { Link, Navigate, useLoaderData, useParams } from "react-router-dom";
+import { Link,  useLoaderData, useParams } from "react-router-dom";
 
 const DetailsPage = () => {
   const loadedData = useLoaderData();
@@ -26,7 +26,7 @@ const DetailsPage = () => {
         <title>RepairRovers - Service Details</title>
       </Helmet>
       <div className="max-w-7xl mx-auto">
-        <div className="card flex lg:card-side bg-base-100 shadow-xl h-[30rem]">
+        <div className="card flex lg:card-side bg-base-100 shadow-xl lg:h-[30rem]">
           <figure className="flex-1">
             <img
               className="bg-cover p-4  object-cover"
