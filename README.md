@@ -62,6 +62,11 @@ npm run dev
 - swiper js
 - react awesome reveal
 
+## Technology
+- react.js
+- node.js
+- express.js
+- tailwind css
 
 
 ## Characteristic 
