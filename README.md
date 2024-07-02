@@ -69,9 +69,9 @@ npm run dev
 - tailwind css
 
 
-## Characteristic 
+## Project Overview
 
-This website uses Reactjs to create a nice-looking design and features. It's specifically designed for a Home Repair Services company. It uses 'react-router dom' so you can easily navigate between pages without the page reloading each time. you can add service delete services and update services easily, There are more than 10 pages in total, with three accessible from the navigation bar and one dynamic page for item details and update items.
+This website uses Reactjs to create a nice-looking design and features. It's specifically designed for a Home Repair Services company. It uses 'react-router dom' so you can easily navigate between pages without the page reloading each time. you can add services delete services and update services easily, There are more than 10 pages in total, with three accessible from the navigation bar and one dynamic page for item details and update items.
 
 
 if you want to enjoy all of the features you must have to register or log 
