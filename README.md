@@ -12,7 +12,7 @@ Live Link: https://thriving-banoffee-562e2c.netlify.app/
 1. **Clone the repository:**
 
     ```bash
-   git clone https://github.com/shamimfewd/CodeJourney_client.git
+   git clone https://github.com/shamimfewd/HomeRepair_client.git
     cd your-repo-name
     ```
 
